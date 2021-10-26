@@ -1,0 +1,7 @@
+public ActionResult GetData(int? page)
+        {
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            var headings = hm.GetList().ToPagedList(pageNumber, pageSize);
+            return View(headings);
+        }
